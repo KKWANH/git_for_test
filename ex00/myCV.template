@@ -1,0 +1,113 @@
+<!--
+#   42 KKIM - DJANGO & PYThON PISCINE - HEADER
+#		finish date: 7/30
+#		passed date:
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{title}</title>
+		<style>
+			body
+			{
+				text-align: center;
+				background: #BDBDBD;
+				color: white;
+				opacity: 1.0;
+			}
+
+			#WRAPPER
+			{
+				background: #1C1C1C;
+				width: 80%;
+				margin-left: 10%;
+				margin-top: 5%;
+				margin-bottom: 5%;
+				border:  3px white solid;
+				opacity: 1.0;
+			}
+
+			#H1_HEADER
+			{
+				font-size: 60px;
+			}
+
+			#H2_HEADER
+			{
+				font-size: 42px;
+			}
+
+			#TABLE
+			{
+				width: 70%;
+				margin-left: 15%;
+				border-collapse: collapse;
+			}
+
+			.TABLE_TDH
+			{
+				border-width: 2px;
+				border-style: solid;
+
+				text-align: center;
+				height: 50px;
+				font-size: 20px;
+			}
+
+			.LI_TECH
+			{
+				text-align: left;
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="WRAPPER">
+			<br><br><h1 id="H1_HEADER">Hello 🖐, world 🌎</h1>
+			<br><h2 id="H2_HEADER">이름, 성 🖋</h2>
+			<table id="TABLE"><tbody>
+				<tr>
+					<th class="TABLE_TDH" style="width: 45%;">First name</th>
+					<td class="TABLE_TDH" style="width: 55%;">{firstname}</th>
+				</tr>
+				<tr>150
+					<th class="TABLE_TDH">Last name</td>
+					<td class="TABLE_TDH">{lastname}</td>
+				</tr>
+				<tr>
+					<th class="TABLE_TDH">Age</td>
+					<td class="TABLE_TDH">{age}</td>
+				</tr>
+				<tr>
+					<th class="TABLE_TDH">Job</td>
+					<td class="TABLE_TDH">{job}</td>
+				</tr>
+			</tbody></table>
+
+			<br><h2 id="H2_HEADER"><Table>Technology 📡</Table></h2>
+			<div style="width: 50%; margin-left: 25%; border: 2px white solid;"><ol>
+				<li class="LI_TECH"><pre style="font-weight: bold;"> C	  ★★★★☆</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;"> JAVA	  ★★★☆☆</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;"> PYTHON	  ★★☆☆☆</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;"> SPRING	  ★★★☆☆</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;"> HTMl	  ★★★☆☆</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;"> CSS	  ★★☆☆☆</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;"> DOCKER	  ★★★★☆</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;"> ..etc	  ❔</pre></li>
+			</ol></div>
+
+			<br><h2 id="H2_HEADER"><Table>Hope to learn 🙏🏼</Table></h2>
+			<div style="width: 50%; margin-left: 25%; border: 2px white solid;"><ul>
+				<li class="LI_TECH"><pre  style="font-weight: bold;">Deep learning</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;">Game programming</pre></li>
+				<li class="LI_TECH"><pre  style="font-weight: bold;">Web...?</pre></li>
+			</ul></div>
+
+			<br><br><h1 id="H1_HEADER">Thank you for watching 😎</h1>
+			
+		</div>
+		<img style="width: 24%; margin-top: 12%;" src="https://mgall.app/api/file/15651750">
+			
+	</body>
+</html>

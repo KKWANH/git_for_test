@@ -26,7 +26,7 @@ def		init(request):
 				""".format(TABLE=DEF_TABLE)
 			with _con.cursor() as _cur:
 				_cur.execute(_sql)
-			_cur.commit()
+				_cur.execute("commit")
 			return	HttpResponse("OK")
 		except Exception as _exc:
 			return	HttpResponse(_exc)

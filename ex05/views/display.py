@@ -12,7 +12,7 @@ class	Display(View):
 		try:
 			_mvs = Movies.objects.all()
 			if len(_mvs) == 0:
-				raise Movies.DoesNotExis
+				raise Movies.DoesNotExist
 			return	render(request, self._tmp, {"movies": _mvs})
 		except Movies.DoesNotExist as _exc:
 			return	HttpResponse("No data available")

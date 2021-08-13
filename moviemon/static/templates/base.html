@@ -1,0 +1,129 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Game</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+		<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			document.addEventListener("keydown", dealWithKeyboard, false);
+			document.addEventListener("keypress", dealWithKeyboard, false);
+			document.addEventListener("keyup", dealWithKeyboard, false);
+
+			function dealWithKeyboard(event) {
+				switch (event.keyCode) {
+					case 13: // enter
+						$('#pad_btn_start').get(0).click();
+						break ;
+					case 27: // esc
+						$('#pad_btn_select').get(0).click();
+						break ;
+					case 37: // left
+						$('#pad_btn_left').get(0).click();
+						break ;
+					case 38: // up
+						$('#pad_btn_up').get(0).click();
+						break ;
+					case 39: // right
+						$('#pad_btn_right').get(0).click();
+						break ;
+					case 40: // down
+						$('#pad_btn_down').get(0).click();
+						break ;
+					case 65: // a
+						$('#pad_btn_a').get(0).click();
+						break ;
+					case 66: // b
+						$('#pad_btn_b').get(0).click();
+						break ;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div style="border-top: 12px solid black; border-left: 8px solid black; border-right: 8px solid black; border-bottom: 12px solid black; width: 1181px; height: 419px; margin-left: 19%; margin-top: 2.5%;" >
+			{% block content %}
+				<img src="{% static 'img/logo.png' %}">
+			{% endblock %}
+		</div>
+		<div style="border-top: 12px solid black; border-left: 8px solid black; border-right: 8px solid black; border-bottom: 12px solid black; width: 1181px; margin-left: 19%;" >
+			<div style="height: 30px; text-align: center;">
+				<p>&nbsp;&nbsp;
+				{% if buttons.up.text %}
+					Press <b>UP</b> to {{ buttons.up.text }}.&nbsp;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+				{% if buttons.down.text %}
+					Press <b>DOWN</b> to {{ buttons.up.text }}.&nbsp;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+				{% if buttons.left.text %}
+					Press <b>LEFT</b> to {{ buttons.up.text }}.&nbsp;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+				{% if buttons.right.text %}
+					Press <b>RIGHT</b> to {{ buttons.up.text }}.&nbsp;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+				{% if buttons.select.text %}
+					Press <b>SELECT</b> to {{ buttons.select.text }}.&nbsp;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+				{% if buttons.start.text %}
+					Press <b>START</b> to {{ buttons.start.text }}.&nbsp;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+				{% if buttons.a.text %}
+					Press <b>A</b> to {{ buttons.a.text }}.&nbsp;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+				{% if buttons.b.text %}
+					Press <b>B</b> to {{ buttons.b.text }}.&nbsp;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+				</p>
+			</div>
+		</div>
+
+		{% block button %}
+		<div>
+
+			
+			<img
+				style="width: 55%; position: absolute; top: 57%; left: 22.25%;"
+				src="{% static 'img/pad.png' %}">
+			
+				
+			<a id="pad_btn_a" {% if buttons.a.link %} href="{{ buttons.a.link }}" {% else %} href="?button=A" {% endif %} type="GET">
+				<img
+					style="width: 84px; position: absolute; top: 904.5px; right: 708px;"
+					src="{% static 'img/pad_btn_A.png' %}"></a>
+			<a id="pad_btn_b" {% if buttons.b.link %} href="{{ buttons.b.link }}" {% else %} href="?button=B" {% endif %} type="GET">
+				<img
+					style="width: 84px; position: absolute; top: 822px; right: 605px;"
+					src="{% static 'img/pad_btn_B.png' %}"></a>
+
+
+			<a id="pad_btn_up" href="?button=up" type="GET">
+				<img
+					style="width: 44px; position: absolute; top: 812.5px; right: 1298px;"
+					src="{% static 'img/pad_btn_up.png' %}">
+			<a id="pad_btn_down" href="?button=down" type="GET">
+				<img
+					style="width: 44px; position: absolute; top: 938px; right: 1298px;"
+					src="{% static 'img/pad_btn_down.png' %}">
+			<a id="pad_btn_left" href="?button=left" type="GET">
+				<img
+					style="width: 44px; position: absolute; top: 874.7px; right: 1360px;"
+					src="{% static 'img/pad_btn_left.png' %}"></a>
+			<a id="pad_btn_right" href="?button=right" type="GET">
+				<img
+				style="width: 44px; position: absolute; top: 874.7px; right: 1236px;"
+					src="{% static 'img/pad_btn_right.png' %}"></a>
+		
+
+			<a id="pad_btn_select" {% if buttons.select.link %} href="{{ buttons.select.link }}" {% else %} href="?button=select" {% endif %} type="GET" >
+				<img
+					style="width: 78px; position: absolute; top: 897px; right: 1066px;"
+					src="{% static 'img/pad_btn_opt.png' %}"></a>
+			<a id="pad_btn_start" {% if buttons.start.link %} href="{{ buttons.start.link }}" {% else %} href="?button=start" {% endif %} type="GET" >
+				<img
+					style="width: 78px; position: absolute; top: 897px; right: 946px;"
+					src="{% static 'img/pad_btn_opt.png' %}"></a>
+		</div>
+		{% endblock %}
+	</body>
+</html>

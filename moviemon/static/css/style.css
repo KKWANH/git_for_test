@@ -1,0 +1,234 @@
+@font-face {
+	font-family: "PKMN RBYGSC";
+	font-style: normal;
+	src: url("../font/PKMN_RBYGSC.ttf") format("truetype");
+}
+body {
+	font-family: "PKMN RBYGSC";
+	background-color: white;
+	max-width: 100vw;
+}
+pre {
+	width: 90%;
+	white-space: pre-line;
+	background-color: #ddd;
+	padding: 20px;
+	border: solid 10px #eee;
+	clear: both;
+	overflow: hidden; text-overflow: ellipsis;
+}
+pre::before {
+	content: 'DEBUG DATA:';
+}
+ul.menu {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	max-height: 50vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: solid 6px white;
+	border-radius: 12px;
+}
+ul.menu li {
+	padding: 8px 12px;
+	text-align: center;
+}
+ul.menu li > a {
+	text-decoration: none;
+}
+li.selected {
+	animation: .7s anim infinite alternate;
+	background-color: #75d13f;
+    color: #00551C;
+	animation-timing-function: linear;
+	font-weight: 700;
+}
+
+@keyframes anim {
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes anim-half {
+  50% {
+    background-color: #75d13f;
+  }
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.mini-poster {
+	width: 50px;
+	height: 50px;
+	display: block;
+	border-radius: 25px;
+	border: solid 6px white;
+	background-position: center;
+	background-size: cover;
+	margin: 0 auto;
+}
+.list {}
+
+.map {
+	width: 100%;
+	height: 420px;
+	background-image: url("../img/map.png");
+	position: relative;
+}
+.battle {
+	width: 420px;
+	height: 420px;
+	position: relative;
+	background-color: white;
+	border-radius: 6px;
+}
+/* 1171px 1279px */
+/* .button {
+	display: inline-block;
+	padding: 8px 12px;
+	margin: 20px;
+	background: grey;
+	border-bottom: solid 6px #333;
+	border-right: solid 6px #333;
+	border-left: solid 3px #666;
+	border-top: solid 3px #bbb;
+	color: navy;
+    text-decoration: none;
+}
+.button:hover {
+	border-top-width: 1px;
+	border-top-color: #999;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+	padding-right: 14px;
+	padding-top: 12px;
+	color: darkblue;
+} */
+.screen_data
+{
+	text-align: center;
+	padding: 10px;
+	display: block;
+	clear: both;
+	float: left;
+	width: 90px;
+	margin-left: 10px;
+	color: #00ff15;
+	background: black;
+	opacity: .88
+}
+.dialog.found {
+	position: absolute;
+	z-index: 32;
+	left: 0;
+	right: 0;
+	color: orange;
+	background: black;
+	opacity: .88;
+	margin: 0 auto;
+	margin-top: 25px;
+	padding: 22px;
+	max-width: 60%;
+	text-align: center;
+}
+.dialog.found p {
+	font-size: 12px;
+}
+.dialog.found ul {
+	text-align: left;
+	font-weight: 600;
+	font-size: 11px;
+}
+.positionPlayer {
+	position: absolute;
+	z-index: 31;
+	top: 50%;
+	right: 50%;
+	width: 33px;
+	height: 33px;
+	border-radius: 10px;
+}
+b { font-weight: 900; }
+.movie-icon, .pickle-rick > .img, .moviemon > .img, .win .img {
+	width: 64px;
+	height: 64px;
+	margin: 0 auto;
+	display: block;
+	border-radius: 24px;
+	border: solid 4px white;
+	margin-bottom: 16px;
+	background-position: center;
+	background-size: cover;
+}
+.battle {
+	border-radius: 6px;
+}
+.battle .pickle-rick, .battle .moviemon, .battle .action .option {
+	width: 50%;
+	margin: 0 auto;
+	float: left;
+	text-align: center;
+}
+.battle .pickle-rick, .battle .moviemon {
+	height: 100%;
+	padding: 30px;
+	color: white;
+	box-sizing: border-box;
+}
+.battle .pickle-rick {
+	background-color: #191919;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+.movie-icon, .pickle-rick > .img {
+	background-image: url('../img/pickle_rick.png')
+}
+.battle .moviemon {
+	background-color: navy;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+.battle .action {
+	position: absolute;
+	width: 100%;
+	bottom: 30px;
+	text-align: center;
+	color: white;
+	left: 0;
+	right: 0;
+}
+.battle .action .option {
+	animation: blink 1s linear infinite;
+	opacity: .9;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes blink-half {
+  50% {
+    opacity: 0.1;
+  }
+}
+.battle .screen-data {
+	position: absolute;
+    bottom: 42px;
+    opacity: .7;
+}
+.win {
+	padding: 40px;
+	text-align: center;
+}

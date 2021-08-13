@@ -1,0 +1,1 @@
+python3 moviemon/manage.py runserver

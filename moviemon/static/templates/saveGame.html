@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block content %}
+
+	<h4>Pick a slot to save from:</h4>
+	<ul class="menu">
+	{% for s in slots %}
+		<li id="{{ m.Title }}" {% if forloop.counter0 == selectedMenuItemIndex %} class="selected" {% endif %} >
+			<a href="?{{ s.name }}" type="GET">{{ s.name }} {{ s.status }}</a>
+		</li>
+	{% endfor %}
+	</ul>
+
+{% endblock %}

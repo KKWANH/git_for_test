@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block content %}
+
+	{% if win %}
+	<section class="battle">
+		<div class="win">
+			<h2>You've caught it!</h2>
+
+			<i class="img" style="background-image: url({{ movie.Poster }})" ></i>
+			<h6>{{ movie.Title }}</h6>
+
+			<p>(B) - to worldmap</p>
+		</div>
+	</section>
+
+	{% elif request_token == server_token %}
+	<!-- authorized -->
+	<section class="battle">
+
+		<h6 class="screen-data">{{ screen_data.moviemons_left }} / {{ screen_data.moviemons_total }}<br>🎾: {{ screen_data.movieballs }}</h6>
+
+		<div class="pickle-rick">
+			<h6>Player</h6>
+			<i class="img" ></i>
+			<p class="power">Power: {{ power }} / 10</p>
+		</div>
+		
+		<div class="moviemon">
+			<h6>{{ movie.Title }}</h6>
+			<i class="img" style="background-image: url({{ movie.Poster }})" ></i>
+			<p class="power">Power: {{ movie.imdbRating }} / 10</p>
+		</div>
+
+		<div class="action" >
+			<div class="option action-a">(A) - launch movieball</div>
+			<div class="option action-b">(B) - pass</div>
+		</div>
+
+	</section>
+
+
+	{% endif %}
+	
+
+	{% if request_token != server_token %}
+	<h6>not authorized, go away, you, hackerman</h6>
+	<img src="https://media.giphy.com/media/RyXVu4ZW454IM/giphy.gif" alt="hackerman.gif" />
+	{% endif %}
+
+{% endblock %}

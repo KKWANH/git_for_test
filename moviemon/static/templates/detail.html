@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block content %}
+
+	<img src="{{ movie.Poster }}">
+	<h1>{{ movie.Title }}</h1>
+	<sup>{{ movie.Year }}</sup>
+	<h2>Director : {{ movie.Director }}</h2>
+	<h4>Imdb rating : {{ movie.imdbRating }}</h4>
+	<p>
+	Actors : {{ movie.Actors }}<br><br>
+	{{ movie.Plot }}
+	</p>
+
+	<!-- <a style="display:inline-block; width: auto; border: solid 6px grey; background-color: white; margin: 20px; padding: 8px 12px; text-decoration: none; clear: both; float: left;" href="../moviedex">back</a> -->
+
+	<!-- <pre>{{ movie }}</pre> -->
+
+{% endblock %}

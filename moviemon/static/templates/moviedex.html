@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block content %}
+
+<!-- <pre>{{ movies }}</pre> -->
+	<ul class="menu">
+		{% for m in movies %}
+			<li id="{{ m.Title }}" {% if forloop.counter0 == selectedMenuItemIndex %} class="selected" {% endif %} >{{ m.Title }}  <span class="mini-poster" style="background-image: url({{ m.Poster }})"><span> </li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

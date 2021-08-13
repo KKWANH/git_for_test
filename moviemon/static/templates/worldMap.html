@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block content %}
+	<section class="map" style="background-position: {{ position.x }}% {{ position.y }}% " >
+		<h6 class="screen_data" style="margin-bottom: -16px;">LEFT: {{ screen_data.moviemons_left }}/{{ screen_data.moviemons_total }}</h6>
+		<h6 class="screen_data">BALL: {{ screen_data.movieballs }}</h6>
+		{% if moviemon %}
+			<div class="dialog found" >
+				<h6>Congrats! You've found a {{ moviemon.Title }}</h6>
+				<i class="movie-icon" style="background-image: url({{ moviemon.Poster }})"></i>
+				<ul>
+					<li>press (A) to <b>battle</b> with {{ moviemon.Title }}</li>
+					<li>press (B) to <b>skip</b></li>
+				</ul>
+			</div>
+		{% elif movieball %}
+			<div class="dialog found" >
+				<h6>Congrats! You've found a Movieball!</h6>
+				<p>Just accept this gift from the God of Random</p>
+			</div>
+		{% endif %}
+		<img class="positionPlayer" src="{% static 'img/pointer.gif' %}">
+	</section>
+{% endblock %}

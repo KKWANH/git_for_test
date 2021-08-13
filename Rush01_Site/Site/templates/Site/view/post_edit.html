@@ -1,0 +1,15 @@
+{% extends 'Site/base/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}
+	Edit Post
+{% endblock title %}
+
+{% block content %}
+	<div>
+		<h1>Edit Post!</h1>
+		<div>
+			{% include 'Site/view/post_form.html' %}
+		</div>
+	</div>
+{% endblock content %}

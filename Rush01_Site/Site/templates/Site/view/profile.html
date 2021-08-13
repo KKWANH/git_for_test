@@ -1,0 +1,63 @@
+{% extends 'Site/base/base.html' %}
+{% load static %}
+
+{% block title %}
+	Profile
+{% endblock title %}
+
+{% block content %}
+	<h1 style='padding-top:3%; text-align:center; font-weight: bold;'>ABOUT {{ view.kwargs.pk }}</h1>
+	<br><br>
+	<form method="post" enctype="multipart/form-data" style="padding-left:10%;padding-right: 10%;">
+		{% csrf_token %}
+		{% if not owner and not request.user.is_admin %}
+			<fieldset class="form-group" style="border: solid;" disabled>
+		{% else %}
+			<fieldset class="form-group" style="border: solid;">
+		{% endif %}
+		{% for field in form %}
+			<br>
+			<div style="padding-left:5%;display:flex;align-items:center;">
+				<div class="col-lg-2">
+					{{ field.label_tag }}
+				</div>
+			{% if field.label == "ProfileImage"%}
+				{% if field.initial %}
+					<div style="display:flex;align-items: center;">
+						<img src="{{ field.initial.url }}" width="100px" height="100px">
+					</div>
+				{% endif %}
+			{% else %}
+				{% if field.label == "Is_Admin" and not admin %}
+					<fieldset disabled>
+				{% endif %}
+				<div class="col-lg-6">
+				{{ field }}
+				</div>
+				{% if field.label == "Is_Admin" and not admin %}
+					</fieldset>
+				{% endif %}
+			{% endif %}
+			</div>
+			{% if field.label == "ProfileImage"%}
+				{% if owner or request.user.is_admin %}
+					<div style="padding-left:10%;">
+						<input type="file" name="profileImage" accept="image/*" id="id_profileImage">
+					</div>
+				{% endif %}
+			{% endif %}
+			{% for error in field.errors %}
+			{{ error }}
+			{% endfor %}
+		{% endfor %}
+			</fieldset>
+		{% if owner or request.user.is_admin %}
+			<button style="margin-left:90%;" class="btn btn-lg btn-outline-secondary" type="submit">Submit</button>
+		{% endif %}
+	</form>
+	{% if start%}
+		<div style="text-align: center" >
+			<a href="{% url 'Site:discussionDetail' user1=request.user.nickName user2=view.kwargs.pk %}">Start Discussion</a>
+		</div>
+	{% endif %}
+{% endblock content %}

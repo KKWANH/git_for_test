@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: Site
+Version: 0.1
+Summary: A Django app to write posts.
+Home-page: https://localhost:8000/
+Author: kkim suko
+Author-email: kkim@student.42seoul.kr suko@student.42seoul.kr
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: X.Y  # Replace "X.Y" as appropriate
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.6
+
+=====
+Rush01
+=====
+
+Rush01 is a Django app to write posts.
+
+Quick start
+-----------
+
+1. Add "Site" to your INSTALLED_APPS setting like this::
+
+    INSTALLED_APPS = [
+        ...
+        'Site.app.SiteConfig',
+    ]
+
+2. Include the ex URLconf in your project urls.py like this::
+
+    path('Site/', include('Site.urls')),
+
+3. Run ``python manage.py migrate`` to create the ex models.
+
+4. Start the development server and visit http://127.0.0.1:8000/admin/
+   to create a Site (you'll need the Admin app enabled).
+
+5. Visit http://127.0.0.1:8000/ to write posts.
+
+

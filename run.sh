@@ -1,0 +1,1 @@
+docker-compose -f Rush01_Site/docker-compose.yml up --build

@@ -1,0 +1,22 @@
+{% load static %}
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>{% block title %}{% endblock title %} - 🌆</title>
+		{% bootstrap_javascript jquery='full' %}
+		{% bootstrap_css %}
+		<link rel="stylesheet" href="{% static 'Site/rush01.css' %}" />
+	</head>
+	<body style="background-color: #bbbbbb; color: white;">
+		{% include 'Site/base/header.html' %}
+		<div class="container py-2" style="background-color: rgb(17, 17, 17); min-height: calc(100vh - 72px); box-shadow: 0 50px 200px rgb(0 0 0 / 100%);">
+			{% bootstrap_messages %}
+			{% block content %}
+				<h1>tmp</h1>
+			{% endblock content %}
+		</div>
+	</body>
+</html>

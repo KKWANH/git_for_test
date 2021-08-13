@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>🚥</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/my_picture.css' %}" />
+		<style>
+			body {
+				background-image: url("{% static 'img/ralo.png' %}");
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark transparent" style="min-height: 72px;">
+			<a	class="navbar-brand"
+				href="#"
+				style="font-size: 80px; margin-left: 17vw; margin-top: -30px; margin-bottom: -30px;">
+				🚥
+			</a>
+			<a  href="https://github.com/KKWANH"
+				style="font-size: 30px; margin-left: 55vw; margin-top: -30px; margin-bottom: -30px; color: white; text-decoration: none; font-weight: bold;">
+				🎹 KKIM
+			</a>
+		</nav>
+		<div class="container py-2" style="background-color: rgb(17, 17, 17); min-height: calc(100vh - 72px); box-shadow: 0 50px 200px rgb(0 0 0 / 100%);">
+			<p>PLEASE submit your photo here!</p>
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit" value="Submit" />
+			</form>
+			<ul>
+				{% for file in files %}
+					<li>
+						<a href="{{ file.file.url }}">
+							{{ file.name }}
+						</a>
+					</li>   
+				{% empty %}
+					No file yet.
+				{% endfor %}
+			</ul>
+		</div>
+	</body>
+</html>
